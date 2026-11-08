@@ -26,7 +26,7 @@ def main():
     count = 0
     docs = [*ROOT.rglob('*.md'), ROOT.parent / 'README.md', ROOT.parent / 'README_en.md']
     for p in docs:
-        if any(s in p.relative_to(ROOT.parent).parts for s in ['out', 'build', '_soccer_box']):
+        if any(s in p.relative_to(ROOT.parent).parts for s in ['out', 'build', '_soccer_box', '.soccer-runs', 'unix_workspace']):
             continue
         text = p.read_text(encoding='utf-8-sig')
         for target in re.findall(r'!?\[[^\]\n]*\]\(([^\n)]+)\)', text):

@@ -1,0 +1,26 @@
+你和另一名队友组成一队，参加 2v2 简化足球编程对抗赛。你们各写一个 C++ 程序，各控制本队一名球员；最终看全队的比赛成绩。
+
+先读当前文件夹里的 README.md（工具）、RULES.md（规则全文）和 TEAMCHAT_README.md（和队友沟通的工具 tc.py）。你自己的球员程序是 submission/player.cpp；队友的代码在 /teammate/submission/，只读。
+
+规则要点：12000×8000 的封闭球场，一局 1200 步，进球多的队赢。每步你的程序读局面、输出一行 AX AY KX KY MSG（加速度、踢球向量、发给队友的一个 0..255 的数），每步 CPU 预算 10 毫秒。你看到的永远是“自己向右进攻”。队内 0 号 / 1 号每个种子轮换，程序从开局信息里的 IDX 得知。soccer.hpp 是裁判用的同一份引擎，可以 include 来精确预测。
+
+本场分为三个阶段：战术会议 5 分钟、上半场开发 40 分钟、下半场开发 40 分钟。主办方通过 tc.py 发阶段通知，python3 clock.py 显示当前阶段和剩余时间。
+
+现在是战术会议（5 分钟）：只用 tc.py 和队友讨论打法、分工、两个程序怎么配合，不写代码，不写文件（队聊工具保存消息除外）。先 python3 tc.py send "你的战术提议"，讨论谁抢球、谁接应和回防，MSG 协议如何约定，IDX 轮换如何处理。会议结束时主办方会通过队聊发“可以开始写代码”；在那之前用 python3 tc.py wait 60 等消息，并用 python3 clock.py 检查阶段，不要结束本轮。
+
+收到“可以开始写代码”且 clock.py 阶段为 first 后，进入上半场开发（40 分钟）。各自实现并测试自己的球员程序，持续通过 tc.py 交流。可以运行：
+python3 match.py check submission/player.cpp
+python3 match.py run --me submission/player.cpp --mate /teammate/submission/player.cpp --opp baseline --seeds 8
+python3 match.py run --me submission/player.cpp --mate /teammate/submission/player.cpp --opp sparring --seeds 8
+python3 replay.py info replays/<回放>.txt
+裁判和参考 bot 已准备好，直接使用上述工具即可。
+
+要点：
+- 收卷时 submission/player.cpp 是什么就交什么：不要让它长时间停在编译不过的状态。
+- 各自的程序自己写：可以读队友的 submission 代码、参考思路、约定协议，但不要整份或大段照搬；不能修改队友文件。
+- 只在当前工作区内写文件（队聊工具除外）；禁止联网，禁止求助其他模型，包括启动子代理、Task / Agent 工具和后台并行代理；禁止查看其他队伍资料。
+- 和队友只通过 python3 tc.py send、inbox、wait 60、log、status 这些脚本命令交流，不使用交互终端。需要对方回复时发完用 wait，等不到就继续工作；每轮测试后检查 inbox。
+- 只能按 PID 结束你自己启动的进程，不要按名字批量结束进程。
+- 不要向我提问，也不要等待我确认。
+
+上半场到点时停止修改，主办方收卷并通过队聊通知。请报告当前提交路径和测试结果，结束本轮，等待下半场的任务消息。若本次是故障续跑，先看 clock.py、tc.py inbox 和现有源码，按当前阶段继续，不重置已有成果。

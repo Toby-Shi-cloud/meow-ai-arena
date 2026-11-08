@@ -1,0 +1,3 @@
+战术会议结束，可以开始写代码。现在进入上半场开发（40 分钟），python3 clock.py 查看剩余时间。
+
+各自编写 submission/player.cpp，队友的只读代码在 /teammate/submission/。按会议约定配合，持续用 tc.py 沟通，用 match.py 编译和对打。到点停止修改，报告当前版本和测试结果，结束本轮。开赛消息中的其他规则不变。

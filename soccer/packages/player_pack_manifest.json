@@ -190,7 +190,7 @@
       "path": "示例回放.txt",
       "historical_sha256": "04ab7277166a29da7b6df8d26476ac3d4f86e42e6e9268a06d22c7ce6548f3fa",
       "kind": "published-file",
-      "published_source": "workspace/示例回放.txt",
+      "published_source": "workspace/sample-replay.txt",
       "published_sha256": "04ab7277166a29da7b6df8d26476ac3d4f86e42e6e9268a06d22c7ce6548f3fa"
     }
   ],

@@ -1,0 +1,7 @@
+# Local matches, submissions, chat/state, logs, gateway credentials and native binaries.
+# Keep source/templates in scripts/codex_team; never commit this runtime tree.
+/.soccer-runs/
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/

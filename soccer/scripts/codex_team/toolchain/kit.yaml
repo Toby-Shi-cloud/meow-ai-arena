@@ -1,0 +1,24 @@
+# syntax=docker/sandbox-kit:3
+schemaVersion: "3"
+kind: mixin
+displayName: Soccer C++ toolchain
+description: Isolated Debian 13 GCC sysroot; no sandbox runtime network required
+build: |
+  FROM debian:trixie-slim AS compiler
+  RUN apt-get update && apt-get install -y --no-install-recommends g++ && rm -rf /var/lib/apt/lists/*
+  FROM scratch
+  COPY --from=compiler /usr/ /opt/soccer-toolchain/usr/
+  COPY --from=compiler /lib/ /opt/soccer-toolchain/lib/
+  COPY --chmod=0755 <<'EOF' /usr/local/bin/g++
+  #!/bin/sh
+  set -eu
+  root=/opt/soccer-toolchain
+  case "$(uname -m)" in
+    aarch64) triplet=aarch64-linux-gnu ;;
+    x86_64) triplet=x86_64-linux-gnu ;;
+    *) echo "Unsupported architecture" >&2; exit 1 ;;
+  esac
+  export LD_LIBRARY_PATH="$root/usr/lib/$triplet"
+  export PATH="$root/usr/bin:$PATH"
+  exec "$root/usr/bin/g++" --sysroot="$root" -B"$root/usr/lib/$triplet/" "$@"
+  EOF

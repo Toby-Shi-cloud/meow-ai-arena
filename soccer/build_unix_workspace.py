@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / 'workspace'
 DST = ROOT / 'unix_workspace'
 
-COPY_VERBATIM = {'template.cpp', 'soccer_engine.py', 'viewer.html', '示例回放.txt'}
+COPY_VERBATIM = {'template.cpp', 'soccer_engine.py', 'viewer.html', 'sample-replay.txt'}
 PATCHED = {'build.py', 'match.py', 'replay.py', 'soccer.hpp',
            'README.md', 'README_en.md', 'RULES.md', 'RULES_en.md'}
 

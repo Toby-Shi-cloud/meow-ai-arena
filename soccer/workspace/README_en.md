@@ -15,7 +15,7 @@ You and a teammate each write one C++ player bot. Read the [full rules](RULES_en
 | viewer.html | Offline viewer; drag a replay file into it |
 | arena.cpp | Referee source; arena.exe is built locally |
 | soccer_engine.py | Python physics implementation used by replay tools |
-| 示例回放.txt | Original sample replay |
+| sample-replay.txt | Original sample replay |
 | run.cmd | Finds Python and runs a script on Windows |
 
 Requires Windows, Python 3.10+ and g++. The AppContainer referee does not run on Linux/macOS. Put g++ on PATH or set CXX; the archive also searches repository tools/w64devkit/bin. From the parent directory first run `python build_reference.py` to compile the referee and baseline/midfield/sparring bots. Their source is public here but was not given to contestants. Source adaptations are recorded in [source_manifest.json](../source_manifest.json).

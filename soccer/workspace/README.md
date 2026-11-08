@@ -18,7 +18,7 @@
 | `bots/baseline.exe` | 基准 bot（中等强度），只有程序 |
 | `bots/midfield.exe` | 中档陪练 bot（强于基准、弱于陪练），只有程序 |
 | `bots/sparring.exe` | 陪练 bot（较强），只有程序 |
-| `示例回放.txt` | 一局示例回放（陪练 对 基准），可拖进 viewer.html 或用 replay.py 试 |
+| `sample-replay.txt` | 一局示例回放（陪练 对 基准），可拖进 viewer.html 或用 replay.py 试 |
 | `run.cmd` | 找到 Python 并运行脚本：`.\run.cmd match.py ...`（直接 `python match.py ...` 也行） |
 
 运行后会自动生成 `build/`（编译缓存）和 `replays/`（回放）。

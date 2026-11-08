@@ -16,7 +16,7 @@
   },
   "workspace/README.md": {
     "original_sha256": "f2315ccd8d4356db70c2cc56a5cad15335b29be56f0798001c3e73e1a4e312dc",
-    "sha256": "2e29d999b7bad3a22dd029d881f25ad77d5d2a0a07866bb492012cb56febcfa8",
+    "sha256": "42f8bbefab7e795c60059db0831002132d9c957312da66f6604db1a5ee263132",
     "modified": true
   },
   "workspace/replay.py": {
@@ -54,7 +54,7 @@
     "sha256": "3e1b5b459e278e629f26690cae172cab5f3bc9ff222343953f8751ee2473fab4",
     "modified": false
   },
-  "workspace/示例回放.txt": {
+  "workspace/sample-replay.txt": {
     "original_sha256": "04ab7277166a29da7b6df8d26476ac3d4f86e42e6e9268a06d22c7ce6548f3fa",
     "sha256": "04ab7277166a29da7b6df8d26476ac3d4f86e42e6e9268a06d22c7ce6548f3fa",
     "modified": false

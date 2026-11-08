@@ -102,3 +102,5 @@ This reruns 2,112 games and can take substantial time. Every output JSONL row ha
 - No fixed organizer sandbox directory remains. The referee uses adjacent `_soccer_box/` or explicitly configured `SOCCER_BOX_ROOT`, and stops when the selected location fails its probe.
 - Static hashes for omitted clients do not make their services available. Accounts, proxies, raw sessions, hidden thinking, chats, identity values and voided data are excluded.
 - The inventory identifies what existed, what is available and what still requires local setup. It supports fixed development material, local play and archive verification, not turnkey recreation of the original event or guaranteed byte-identical historical binaries.
+
+The historical `示例回放.txt` is published as `workspace/sample-replay.txt`; its contents and hash are unchanged.

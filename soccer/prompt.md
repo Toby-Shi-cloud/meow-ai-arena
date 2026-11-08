@@ -2,6 +2,8 @@
 
 # 发给选手的消息
 
+本地沙箱可直接复制的版本：[开赛（5 分钟会议 + 40 分钟上半场）](scripts/codex_team/prompt.txt)、[开始编码通知](scripts/codex_team/first.txt)、[下半场（40 分钟）](scripts/codex_team/second.txt)。下文保留原始比赛消息。
+
 开赛消息仅队友名不同，下面把该名字恢复为 `{队友}`；时间已填为实际的 5/40 分钟。中场消息是实际发送版本。逐人原始文件见 [prompts/](prompts/README.md)。这里是主办方提示词，不是选手会话、队聊记录或思考内容。
 
 ## 开赛：会议与上半场
