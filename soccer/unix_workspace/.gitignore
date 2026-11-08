@@ -1,0 +1,6 @@
+# unix_workspace/ 只提交移植后的 arena.cpp 和本文件。
+# 其余内容（run.sh、build.py、match.py、文档、soccer.hpp、回放等）由
+# ../build_unix_workspace.py 从 ../workspace/ 生成，不纳入版本库。
+*
+!.gitignore
+!arena.cpp
